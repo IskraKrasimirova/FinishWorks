@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Професионални Довършителни Работи";
+}
+
+<!-- Hero Section -->
+<section class="bg-dark text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);">
+    <div class="container py-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <span class="badge bg-warning text-dark mb-3 px-3 py-2 fs-6 fw-semibold text-uppercase">Качество без компромиси</span>
+                <h1 class="display-3 fw-extrabold mb-4" style="line-height: 1.15;">
+                    Превърнете дома си в <span class="text-warning">шедьовър</span>
+                </h1>
+                <p class="lead text-muted-light fs-5 mb-4" style="color: #cbd5e1;">
+                    Ние сме Вашите експерти в сухото строителство, шпакловката, боядисването и цялостните довършителни ремонти в София. Доверете се на опит и професионализъм.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a asp-controller="Services" asp-action="Index" class="btn btn-warning btn-lg">
+                        <i class="bi bi-card-list me-2"></i>Нашите Цени
+                    </a>
+                    <a asp-controller="Contact" asp-action="Index" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-chat-dots me-2"></i>Свържете се с нас
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center d-none d-lg-block">
+                <div class="position-relative d-inline-block">
+                    <!-- Elegant modern graphics using CSS and SVG/Icons -->
+                    <div class="card bg-secondary text-white text-start p-4 shadow-lg border-0" style="width: 24rem; background-color: rgba(30, 41, 59, 0.8) !important; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1) !important;">
+                        <h4 class="text-warning mb-3"><i class="bi bi-check-circle-fill me-2"></i>Защо FinishWorks?</h4>
+                        <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                            <li><i class="bi bi-shield-fill-check text-warning me-2"></i><strong>Пълна гаранция</strong> за извършените услуги.</li>
+                            <li><i class="bi bi-calendar3 text-warning me-2"></i><strong>Стриктно спазване</strong> на уговорените срокове.</li>
+                            <li><i class="bi bi-currency-dollar text-warning me-2"></i><strong>Ясни цени</strong> без скрити такси и изненади.</li>
+                            <li><i class="bi bi-stars text-warning me-2"></i><strong>Чистота</strong> и внимание към детайла на обекта.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5 bg-white border-bottom">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-6 col-md-3">
+                <div class="p-3">
+                    <h2 class="display-5 fw-bold text-primary mb-1">150+</h2>
+                    <p class="text-muted mb-0 fw-medium text-uppercase small">Завършени обекта</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3">
+                    <h2 class="display-5 fw-bold text-primary mb-1">100%</h2>
+                    <p class="text-muted mb-0 fw-medium text-uppercase small">Доволни клиенти</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3">
+                    <h2 class="display-5 fw-bold text-primary mb-1">10+</h2>
+                    <p class="text-muted mb-0 fw-medium text-uppercase small">Години опит</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3">
+                    <h2 class="display-5 fw-bold text-primary mb-1">5 год.</h2>
+                    <p class="text-muted mb-0 fw-medium text-uppercase small">Пълна Гаранция</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Offerings / Highlights -->
+<section class="py-5">
+    <div class="container py-4">
+        <div class="text-center max-w-2xl mx-auto mb-5">
+            <h2 class="h1 mb-3">Основните ни дейности</h2>
+            <p class="text-muted fs-5">Професионални решения за Вашите интериорни и довършителни проекти.</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 p-4 border-0 shadow-sm text-center">
+                    <div class="card-body">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-layout-sidebar-inset"></i>
+                        </div>
+                        <h4 class="card-title h5 mb-3">Сухо Строителство</h4>
+                        <p class="card-text text-muted">Изграждане на окачени тавани с фигури, преградни стени, ниши и кутии от гипсокартон.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-4 border-0 shadow-sm text-center">
+                    <div class="card-body">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-paint-bucket"></i>
+                        </div>
+                        <h4 class="card-title h5 mb-3">Шпакловка и Боядисване</h4>
+                        <p class="card-text text-muted">Прецизно подготвяне на повърхностите и боядисване с висококачествени латекси и декоративни мазилки.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-4 border-0 shadow-sm text-center">
+                    <div class="card-body">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-droplet-half"></i>
+                        </div>
+                        <h4 class="card-title h5 mb-3">Ремонт на Бани</h4>
+                        <p class="card-text text-muted">Професионално лепене на плочки, хидроизолация и прецизен монтаж на санитарно оборудване.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a asp-controller="Services" asp-action="Index" class="btn btn-primary btn-lg">
+                <i class="bi bi-arrow-right-circle me-2"></i>Вижте Всички Услуги и Цени
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary text-white text-center">
+    <div class="container py-4">
+        <h2 class="h1 mb-3">Планирате ремонт?</h2>
+        <p class="lead mb-4 max-w-2xl mx-auto text-white-50">Свържете се с нас днес за оглед и изготвяне на индивидуална, подробна и напълно безплатна оферта.</p>
+        <a asp-controller="Contact" asp-action="Index" class="btn btn-warning btn-lg px-5">
+            <i class="bi bi-envelope-open me-2"></i>Заявете Безплатен Оглед Сега
+        </a>
+    </div>
+</section>

@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FinishWorks - Професионални довършителни работи</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            color: #0d6efd !important;
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
+        }
+
+        .navbar-brand span {
+            color: #ffc107;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #0d6efd;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 80%;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        footer {
+            background-color: #1e293b;
+            color: #cbd5e1;
+            padding: 3rem 0 1.5rem;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: #ffc107;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            font-weight: 500;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(13,110,253,0.25);
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #1e293b;
+            font-weight: 600;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-warning:hover {
+            background-color: #ffca2c;
+            border-color: #ffc720;
+            color: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,193,7,0.25);
+        }
+
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem;
+            background-color: rgba(13,110,253,0.1);
+            color: #0d6efd;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-3">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <i class="bi bi-hammer me-2"></i>Finish<span>Works</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-center gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")" asp-controller="Home" asp-action="Index">Начало</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Services" ? "active" : "")" asp-controller="Services" asp-action="Index">Услуги и Цени</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Contact" ? "active" : "")" asp-controller="Contact" asp-action="Index">Контакти</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="btn btn-warning" asp-controller="Contact" asp-action="Index">
+                                <i class="bi bi-telephone-outbound me-2"></i>Безплатен Оглед
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-3"><i class="bi bi-hammer text-warning me-2"></i>FinishWorks</h5>
+                    <p class="small text-muted">Професионални вътрешни ремонти и довършителни работи. Гарантирано качество, спазване на срокове и индивидуален подход към всеки детайл.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-4"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="text-white text-uppercase mb-3">Бързи връзки</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a asp-controller="Home" asp-action="Index">Начало</a></li>
+                        <li><a asp-controller="Services" asp-action="Index">Услуги и Цени</a></li>
+                        <li><a asp-controller="Contact" asp-action="Index">Контакти за връзка</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="text-white text-uppercase mb-3">Нашите Услуги</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><span class="text-muted">Сухо строителство</span></li>
+                        <li><span class="text-muted">Шпакловка и боядисване</span></li>
+                        <li><span class="text-muted">Ремонт на баня и плочки</span></li>
+                        <li><span class="text-muted">Полагане на настилки</span></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="text-white text-uppercase mb-3">Контакт с нас</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small text-muted">
+                        <li><i class="bi bi-geo-alt-fill text-warning me-2"></i>гр. София, България</li>
+                        <li><i class="bi bi-telephone-fill text-warning me-2"></i>+359 888 123 456</li>
+                        <li><i class="bi bi-envelope-fill text-warning me-2"></i>office@finishworks.bg</li>
+                        <li><i class="bi bi-clock-fill text-warning me-2"></i>Пон - Съб: 08:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary pt-3 text-center">
+                <p class="small mb-0 text-muted">&copy; @DateTime.Now.Year FinishWorks. Всички права запазени. Изработено с внимание към детайла.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
