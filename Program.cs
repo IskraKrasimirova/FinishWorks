@@ -1,6 +1,10 @@
+using FinishWorks.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+//builder.Services.AddScoped<IEmailSender, SendGridEmailSender>();
+builder.Services.AddScoped<IEmailSender, MailtrapEmailSender>();
 
 var app = builder.Build();
 
